@@ -73,17 +73,16 @@ How It Works: This workflow is very similar to the 'Centralized' workflow. The b
 
 **Throughout today's exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
 
-### `PRs`and Merging (10 min)
+### PRs and Merging (10 min)
 
-***The Good***
-
-- *Student 1* Check out a new feature branch and create a `js/app.js` file. Then, work with your partner to write code for our first module in `js/app.js` to instantiate our `compliments` Angular App.
+- **Student 1** Check out a new feature branch and create a `js/app.js` file. Then, work with your partner to write code for our first module in `js/app.js` to instantiate our `compliments` Angular App.
 
 - Don't forget to add a Script Tag for `js/app.js` in our `index.html`!
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
+  [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
 
-- *Student 2* Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
+- **Student 2** 
+Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
 
 Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app:
 
@@ -107,9 +106,8 @@ Make sure to also link this file in our html:
 ```html
 <script src="js/compliments/compliments.controller.js"></script>
 ```
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/43294f682bfd036f6b0cc7b336659a6f647cf011)
 
-- *Both Students*
+- **Both Students**
 Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
 
 Each student should add a comment to the PR! It should be an inline comment asking a question about the code, a suggestion or just adding an observation!
@@ -127,8 +125,6 @@ Next, try to break it!!!!
 
 ### Merge Conflicts (15 min)
 
-***The Bad AND The Ugly***
-
 - **Both Students**
 
 Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment
@@ -142,16 +138,11 @@ Then, add the code in our `index.html` outlined below. We will be creating a div
 
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/c54fa09c4b7a54ade8b746425a232e260425a9b1)
 
-
 - **Student 1**
 Change our Angular App name from `compliments` to `emergencyComp` and all instances of it referenced in our application.
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/87e24ec790f70a4686f8a7118551d992d13b0895)
-
 - **Student 2**
 Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
-
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/44cb5a5c2ef579b3400c7560adf3789ac2c57ecb)
 
 - **Both Students**
 Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
@@ -174,7 +165,7 @@ Some things to consider:
 
 ## BREAK (10 min)
 
-## Resolving Merge Conflicts (10 min)
+## Resolving Merge Conflicts (5 min)
 In cases like the one we have created, instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this:
 ```
 <<<<<<< HEAD
@@ -226,7 +217,6 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 ## You Do: Resolve Merge Conflicts w/ Rebase (20 min)
 
 **Both Students**
-
 - Check out a new feature branch.
 - Create a `styles.css` file and add CSS to our emergency compliment page
 - Link to your stylesheet from the `<head>` of `index.html`.
@@ -234,18 +224,19 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Feel free to modify the index.html as well.
 - Both students should add and commit changes.
 
-**Bonus: Both Students**
-
-- Then, `Both students` should work on functionality to display `all` of the compliments instead of one.
-
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/397766964b0d69f063476422d65bd8f2aefe70a0)
-
-
 - **Student 1** push branch and make a pr, and merge your changes.
+
 - **Student 2** then try to do the same thing.
+
 - **Student 2** grab the necessary changes with `git pull --rebase` and resolve any merge conflicts with `git rebase --continue`.
 
-## Integration Manager Workflow (Distributed Workflow)
+- **Bonus**
+
+For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
+
+  [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/397766964b0d69f063476422d65bd8f2aefe70a0)
+
+## Integration Manager Workflow (Distributed Workflow) (10 min)
 
 These approaches all use multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible and is managed by the project maintainer), and changes are submitted via pull request.
 
@@ -265,7 +256,7 @@ When planning these sprints, set concrete goals for yourself. I'm going to achie
 
 It is VITAL that you guys schedule yourselves well.
 
-### We-Do: Software Development Team Simulation Exercise! (15 min)
+### We-Do: Software Development Team Simulation Exercise! (20 min)
 
 Let's Review the following Repo:
 [Pennies!](https://github.com/ga-wdi-exercises/pennies)
