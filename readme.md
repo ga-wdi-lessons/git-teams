@@ -265,6 +265,26 @@ We are going to work through the following exercise together.
 
 Then, we will discuss at the end how this will relate to working together during Project 3.
 
+### The Human Side: Communication (5 mins)
+
+#### Why do code reviews?
+
+Jeff Atwood (co-founder of Stack Exchange, and a smart dude) has written a
+[great summary](http://blog.codinghorror.com/code-reviews-just-do-it/) which I
+encourage you to read. The short verion? Code review can reduce the number of
+errors in our programs dramatically.
+
+In addition we believe that learning to read code critically is an important
+part of improving our own code. After all, to improve our own code, we must read
+it, looking for ways to improve it.
+
+Additionally, many work environments practice some form of code review, so it's
+good to get practice in giving feedback to others now. Even if your future
+workplaces don't have a formal code review process, you may find them so helpful
+that you implement your own informal practices with your teammates!
+
+Interested to read more about [code reviews?](https://github.com/ga-dc/project2-code-review/blob/master/code_review_primer.md)
+
 ## Closing (5 min)
 
 ### Quiz Questions
