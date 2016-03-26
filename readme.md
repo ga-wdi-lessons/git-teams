@@ -5,7 +5,6 @@
 - Use branches and pull requests to isolate changes tied to specific features
 - Efficiently and correctly resolve merge conflicts
 - Explain the difference between `rebase` and `merge`
-- Describe Agile Methodologies
 
 ## Framing: Review Basic Git Workflow (5 mins)
 
