@@ -238,7 +238,7 @@ push branch and make a pr, and merge your changes.
 then try to do the same thing.
 
 - **Student 2**
-grab the necessary changes with `git pull --rebase` and resolve any merge conflicts with `git rebase --continue`.
+grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
 
 ## Break (10 min)
 
@@ -260,9 +260,9 @@ What if you are a little out of sync with your teammates and are worried that a 
 
 Use `git-fetch` and `git-diff` to see the changes instead!
 
-```sh
-$ git fetch
-$ git diff origin/master
+```bash
+$ git fetch <remote> <branch>
+$ git diff <remote>/<branch>
 ```
 
 One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to try that commit again, you can run `git commit --amend` with the `--amend` option:
@@ -278,7 +278,7 @@ Locally:
 
 Remote:
 `git push origin :<branch>` # Deletes Remote Branch
- 
+
 ### Git Blame
 
 `git blame <file_name>`
@@ -310,8 +310,6 @@ Example Aliases:
 ```
 
 If you are adding an Alias to your bash profile you might have to reload to see your updates by running `$ source ~/.bash_profile`
-
-[Git Alias](https://githowto.com/aliases)
 
 ### Git Bash Scripts
 
@@ -371,3 +369,4 @@ Interested to read more about [code reviews?](https://github.com/ga-dc/project2-
 - [Jesse's blog post!](https://jesse.sh/rebases/)
 - [Git Workflows Overview](https://www.atlassian.com/git/tutorials/comparing-workflows)
 - [Git Teams](http://gitforteams.com/)
+- [Git Alias](https://githowto.com/aliases)
