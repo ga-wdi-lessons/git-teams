@@ -56,6 +56,8 @@ git checkout git-teams-starter
 
 How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
 
+[Centralized Workflow Diagram](https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/00/pageSections/07/contentFullWidth/02/content_files/file/git-workflow-svn.png)
+
 **(+)** Very simple
 
 **(-)** Collaboration is kind of clunky.
@@ -64,9 +66,13 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 
 How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
 
+[Feature Branch Workflow](https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/01/pageSections/07/contentFullWidth/0/content_files/file0/document/git-workflow-feature-branch-1.png)
+
 **(+)** Better isolation than Centralized model, but sharing is still easy. Very flexible.
 
 **(-)** Sometimes it's too flexible - it doesn't distinguish in any meaningful way between different branches, and that lack of structure can be problematic for larger projects.
+
+Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 ## You Do: Merging: The Good, The Bad, and The Ugly (Feature Branch Workflow)
 
@@ -153,7 +159,7 @@ When you finish:
 
 Don't worry about writing any code to resolve the merge conflict now, instead, decide between your group how to think about and outline the steps for the next commit.
 
-### Think/Pair/Share 5/5 (10 min)
+### Think/Pair/Share - 5/5 (10 min)
 
 Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
 
@@ -200,13 +206,15 @@ Pull down the changes to `git-teams-starter`
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
+[Git Merge Versus Rebase](https://gist.github.com/beckybeauchamp1/51a805c61e8b30624cc1)
+
 [Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 
 ### Turn and Talk - 2/3 (5 min)
 
 Turn to your neighbor and discuss why you might use a `rebase` instead of a `git merge`
 
-Example Scenario:
+***Example Scenario:***
 
 Here's what a rebase looks like. Suppose we have two branches, a master and a feature branch.
 
@@ -273,11 +281,14 @@ $ git commit --amend
 ### Deleting Branches: Locally VS Remote
 
 Locally:
-`git branch -d <branch>` # Delete local branch
-`git branch -D <branch>` # Force delete un-merged branches
+
+`git branch -d <branch>` Deletes local branch
+
+`git branch -D <branch>` Forces delete for un-merged branches
 
 Remote:
-`git push origin :<branch>` # Deletes Remote Branch
+
+`git push origin :<branch>` Deletes Remote Branch
 
 ### Git Blame
 
@@ -311,7 +322,7 @@ Example Aliases:
 
 If you are adding an Alias to your bash profile you might have to reload to see your updates by running `$ source ~/.bash_profile`
 
-### Git Bash Scripts
+### Additional Scripts
 
 `git-wtf`: Script that displays the state of your repository in a readable and easy-to-scan format
 
@@ -321,9 +332,9 @@ If you are adding an Alias to your bash profile you might have to reload to see 
 
 [Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
 
-## Software Development and Collaboration
+## Software Development and Collaboration (5 min)
 
-### Project Week: What does that mean for you? (5 min)
+### Project Week: What does that mean for you?
 
 Regardless of the `git` approach you decide to take for Project 3, it's important that you establish a workflow and plan!
 
