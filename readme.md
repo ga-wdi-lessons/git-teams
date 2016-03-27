@@ -257,7 +257,7 @@ grab the necessary changes with `git pull --rebase` and resolve any merge confli
 
 ## Break (10 min)
 
-## Integration Manager Workflow (Distributed Workflow) (10 min)
+## Integration Manager Workflow (Distributed Workflow) (5 min)
 
 These approaches all use multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible and is managed by the project maintainer), and changes are submitted via pull request.
 
@@ -331,9 +331,9 @@ If you are adding an Alias to your bash profile you might have to reload to see 
 
 [Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
 
-## Software Development and Collaboration
+## Software Development and Collaboration (5 min)
 
-### Project Week: What does that mean for you? (5 min)
+### Project Week: What does that mean for you?
 
 Regardless of the `git` approach you decide to take for Project 3, it's important that you establish a workflow and plan!
 
