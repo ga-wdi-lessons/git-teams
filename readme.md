@@ -42,7 +42,7 @@ interfering. When a feature is complete, it can be merged back into master.
 ## You Do: Emergency Compliment Angular - Setup (5 min)
 
 Form pairs. To start:
-- One student should fork and clone the [starter-code](https://github.com/ga-dc/emergency_compliment) to their GitHub
+- One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment) to their GitHub
 - Add the second student as a collaborator to this repository
 - The second student should clone the newly-forked repo, so they have a local copy and can start working
 
@@ -80,7 +80,7 @@ How It Works: This workflow is very similar to the 'Centralized' workflow. The b
 
   [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
 
-- **Student 2** 
+- **Student 2**
 Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
 
 Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app:
@@ -100,11 +100,7 @@ Inside of our `compliments.controller.js` add in the following code to instantia
 }());
 
 ```
-Make sure to also link this file in our html:
-
-```html
-<script src="js/compliments/compliments.controller.js"></script>
-```
+Make sure to also add our Script tag in our `index.html`!
 
 - **Both Students**
 Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
@@ -113,7 +109,7 @@ Each student should add a comment to the PR! It should be an inline comment aski
 
 If there are no conflicts, merge your pull request. If there are, you will need to  `git pull` the latest changes, then `commit` again. Once your changes are successfully merged, delete your feature branches, check out `git-teams-starter`, and `pull`.
 
-**Pro Tips**:
+**Reminders**:
 
 1. If you already have an `emergency_compliment` repo, you can clone it down and give it a different name using: `git clone <repo url> <name for repo>`
 2. Make sure you are starting your branches from an `git-teams-starter`
@@ -125,12 +121,13 @@ Next, try to break it!!!!
 ### Merge Conflicts (15 min)
 
 - **Both Students**
-
 Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment
 
-Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`. Work to display the `text` of a random compliment in `data.js` by writing the code within the below div.
+Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`.
 
-```
+Work to display the `text` of a random compliment in `data.js` by writing the code within the below div:
+
+```js
 <div data-ng-controller='complimentsController as vm'>
 </div>
 ```
@@ -138,15 +135,19 @@ Then, add the code in our `index.html` outlined below. We will be creating a div
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/c54fa09c4b7a54ade8b746425a232e260425a9b1)
 
 - **Student 1**
-Change our Angular App name from `compliments` to `emergencyComp` and all instances of it referenced in our application.
+Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
 
 - **Student 2**
 Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
 
 - **Both Students**
 Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
-- **Student 1** Merge your changes into `git-teams-starter` on GitHub.
-- **Student 2** Check your PR -- there should be a merge conflict!
+
+- **Student 1**
+Merge your changes into `git-teams-starter` on GitHub.
+
+- **Student 2**
+Check your PR -- there should be a merge conflict!
 
 When you finish:
 
@@ -154,7 +155,7 @@ Don't worry about writing any code to resolve the merge conflict now, instead, d
 
 ### Think/Pair/Share 5/5 (10 min)
 
-Discuss with your neighbor and write down the answers to the following questions below. Then we will regroup together and discuss as a class.
+Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
 
 Some things to consider:
 
@@ -189,11 +190,13 @@ git checkout git-teams-starter
 git pull origin git-teams-starter
 git push <remote> <your-branchname>
 ```
-- **Both Students** On `Student 2's computer`, look over the merge conflict, resolve it locally, commit, and push.
+- **Both Students**
+On `Student 2's computer`, look over the merge conflicts, resolve it locally, commit, and push.
 
-- **Student 1** Pull down the changes to `git-teams-starter`
+- **Student 1**
+Pull down the changes to `git-teams-starter`
 
-## Rebasing
+## Rebasing (5 min)
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
@@ -223,19 +226,23 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Feel free to modify the index.html as well.
 - Both students should add and commit changes.
 
-- **Student 1** push branch and make a pr, and merge your changes.
-
-- **Student 2** then try to do the same thing.
-
-- **Student 2** grab the necessary changes with `git pull --rebase` and resolve any merge conflicts with `git rebase --continue`.
-
-- **Bonus**
-
+- **Added Bonus**
 For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
 
-  [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/397766964b0d69f063476422d65bd8f2aefe70a0)
+[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/397766964b0d69f063476422d65bd8f2aefe70a0)
 
-## Integration Manager Workflow (Distributed Workflow) (10 min)
+- **Student 1**
+push branch and make a pr, and merge your changes.
+
+- **Student 2**
+then try to do the same thing.
+
+- **Student 2**
+grab the necessary changes with `git pull --rebase` and resolve any merge conflicts with `git rebase --continue`.
+
+## Break (10 min)
+
+## Integration Manager Workflow (Distributed Workflow) (5 min)
 
 These approaches all use multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible and is managed by the project maintainer), and changes are submitted via pull request.
 
@@ -245,32 +252,79 @@ How It Works: One collaborator plays the role of 'Integration Manager'. This mea
 
 **(-)** Could get overwhelming for large projects.
 
-## Software Development, Collaboration, and Code Reviews
+## Git Workflow Tips (10 min)
+
+### Using `git-fetch` and `git-diff`
+
+What if you are a little out of sync with your teammates and are worried that a `git pull` will result in hours of working through merge conflicts?
+
+Use `git-fetch` and `git-diff` to see the changes instead!
+
+```sh
+$ git fetch
+$ git diff origin/master
+```
+### Git Blame
+
+`git blame <file_name>`
+
+Git blame allows you to see who has made changes to a file, or when the file was last changed by someone. This can be used to find out what feature(s) were added.
+
+To find out who changed a file, you can run git blame against a single file, and you get a breakdown of the file, line-by-line, with the change that last affected that line.
+
+Additionally, this feature is available to view on Github!
+
+To use git blame on `GitHub`:
+
+* Navigate to a repository, and click on a file that you're interested in.
+* Click on the Blame button in the upper-right tab list.
+* Browse the list of changes in a file.
+
+### Git Aliases
+
+Aliases allow us to configure shortcuts and can help speed up our workflow!
+
+We can configure them in our `.gitconfig` or `.bash_profile`
+
+Example Aliases:
+```
+[alias]
+  g = git
+	current = rev-parse --abbrev-ref HEAD
+	gl = git log --all --oneline --graph --decorate
+```
+
+If you are adding an Alias to your bash profile you might have to reload to see your updates by running `$ source ~/.bash_profile`
+
+[Git Alias](https://githowto.com/aliases)
+
+### Git Bash Scripts
+
+`git-wtf`: Script that displays the state of your repository in a readable and easy-to-scan format
+
+[Open Source Scripts/Git Tools](http://git-wt-commit.rubyforge.org/)
+
+`git-create`: Bash function that creates a github repo from the command line
+
+[Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
+
+## Software Development and Collaboration
 
 ### Project Week: What does that mean for you? (5 min)
 
-For your next projects you should be focused on setting goals for yourself in small sprints, and working to organize and schedule your workflow.
+Regardless of the `git` approach you decide to take for Project 3, it's important that you establish a workflow and plan!
+
+Focus then on setting goals for yourself in small sprints, and working together to organize and create a schedule.
 
 When planning these sprints, set concrete goals for yourself. I'm going to achieve X by 12:30 so that I can get started on Y after lunch. I will finish Y by close of business so that I can start on Z. You could scale even further than that.
 
 It is VITAL that you guys schedule yourselves well.
 
-### We-Do: Software Development Team Simulation Exercise! (20 min)
-
-Let's Review the following Repo:
-[Pennies!](https://github.com/ga-wdi-exercises/pennies)
-
-We are going to work through the following exercise together.
-
-Then, we will discuss at the end how this will relate to working together during Project 3.
-
-### The Human Side: Communication (5 mins)
-
-#### Why do code reviews?
+### Why do code reviews?
 
 Jeff Atwood (co-founder of Stack Exchange, and a smart dude) has written a
 [great summary](http://blog.codinghorror.com/code-reviews-just-do-it/) which I
-encourage you to read. The short verion? Code review can reduce the number of
+encourage you to read. The short version? Code reviews can reduce the number of
 errors in our programs dramatically.
 
 In addition we believe that learning to read code critically is an important
@@ -278,9 +332,9 @@ part of improving our own code. After all, to improve our own code, we must read
 it, looking for ways to improve it.
 
 Additionally, many work environments practice some form of code review, so it's
-good to get practice in giving feedback to others now. Even if your future
-workplaces don't have a formal code review process, you may find them so helpful
-that you implement your own informal practices with your teammates!
+good to get practice in giving feedback to others now.
+
+Furthermore, `Github` allows us to comment directly on `PRs`, so we can easily incorporate informal code reviews into our workflow. 
 
 Interested to read more about [code reviews?](https://github.com/ga-dc/project2-code-review/blob/master/code_review_primer.md)
 
@@ -300,5 +354,5 @@ Interested to read more about [code reviews?](https://github.com/ga-dc/project2-
 
 ### Further Reading
 - [Jesse's blog post!](https://jesse.sh/rebases/)
-- [Git Worklows Overview](https://www.atlassian.com/git/tutorials/comparing-workflows)
+- [Git Workflows Overview](https://www.atlassian.com/git/tutorials/comparing-workflows)
 - [Git Teams](http://gitforteams.com/)
