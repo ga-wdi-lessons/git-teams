@@ -16,7 +16,7 @@ When you're working on a project, you sometimes want to be able to retrace your 
 ### Why Git?
 Git, apart from being free and open source, is also in many ways a superior system to many older version control tools (such as Subversion) because it is a "distributed" version control tool. This means that there is no centralized approval structure for making changes to the project; instead, every student who clones the repository has their own complete copy, which they can then edit and change. This makes it much easier to use when working in groups.
 
-### Review Git Branching
+### Git Branching
 
 A branch in git is just a label on a particular commit in a repository, along with all of its history (parent commits). When we commit, the current branch label moves forward to the new commit. Another way to say that is the branch label always stays at the tip of the branch.
 
@@ -47,14 +47,19 @@ Form pairs. To start:
 - The second student should clone the newly-forked repo, so they have a local copy and can start working
 
 ```bash
-git checkout git-teams-starter
+$ git checkout git-teams-starter
 ```
 
 ## Single-Remote Workflows (15 min)
 
 ### Centralized Workflow
 
-How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
+How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date. 
+
+![Centrialized Workflow](https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/00/pageSections/07/contentFullWidth/02/content_files/file/git-workflow-svn.png)
+
+>Who might use a Centrialized Workflow? 
+>***A small team***
 
 **(+)** Very simple
 
@@ -63,6 +68,12 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 ### Feature Branch Workflow
 
 How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
+
+![Feature Branch Workflow](https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/01/pageSections/07/contentFullWidth/0/content_files/file0/document/git-workflow-feature-branch-1.png)
+
+>Who might use a Centrialized Workflow? 
+>***GA WDI Instructional Team!***
+>[Garnet](https://github.com/ga-dc/garnet)
 
 **(+)** Better isolation than Centralized model, but sharing is still easy. Very flexible.
 
@@ -105,9 +116,10 @@ Make sure to also add our Script tag in our `index.html`!
 - **Both Students**
 Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
 
-Each student should add a comment to the PR! It should be an inline comment asking a question about the code, a suggestion or just adding an observation!
+- Each student should add a comment to the PR! It should be an inline comment asking a question about the code, a suggestion or just adding an observation!
 
-If there are no conflicts, merge your pull request. If there are, you will need to  `git pull` the latest changes, then `commit` again. Once your changes are successfully merged, delete your feature branches, check out `git-teams-starter`, and `pull`.
+- If there are no conflicts, merge your pull request. If there are, you will need to  `git pull` the latest changes, then `commit` again. 
+- Once your changes are successfully merged, delete your feature branches, check out `git-teams-starter`, and `pull`.
 
 **Reminders**:
 
@@ -123,9 +135,9 @@ Next, try to break it!!!!
 - **Both Students**
 Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment
 
-Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`.
+- Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`.
 
-Work to display the `text` of a random compliment in `data.js` by writing the code within the below div:
+- Work to display the `text` of a random compliment in `data.js` by writing the code within the below div:
 
 ```js
 <div data-ng-controller='complimentsController as vm'>
@@ -149,11 +161,10 @@ Merge your changes into `git-teams-starter` on GitHub.
 - **Student 2**
 Check your PR -- there should be a merge conflict!
 
-When you finish:
-
+- **When you finish:**
 Don't worry about writing any code to resolve the merge conflict now, instead, decide between your group how to think about and outline the steps for the next commit.
 
-### Think/Pair/Share 5/5 (10 min)
+### Think/Pair/Share - 5/5 (10 min)
 
 Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
 
@@ -196,17 +207,19 @@ On `Student 2's computer`, look over the merge conflicts, resolve it locally, co
 - **Student 1**
 Pull down the changes to `git-teams-starter`
 
-## Rebasing (5 min)
+## Rebasing (10 min)
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
+
+[Git Merge Versus Rebase](https://gist.github.com/beckybeauchamp1/51a805c61e8b30624cc1)
 
 [Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 
 ### Turn and Talk - 2/3 (5 min)
 
-Turn to your neighbor and discuss why you might use a `rebase` instead of a `git merge`
+ Turn to your neighbor and discuss why you might use a `rebase` instead of a `git merge`
 
-Example Scenario:
+***Example Scenario:***
 
 Here's what a rebase looks like. Suppose we have two branches, a master and a feature branch.
 
@@ -224,7 +237,9 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Link to your stylesheet from the `<head>` of `index.html`.
 - Each add unique CSS styling of your choosing.
 - Feel free to modify the index.html as well.
-- Both students should add and commit changes.
+
+- **Both students** 
+Add and commit changes.
 
 - **Added Bonus**
 For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
@@ -242,7 +257,7 @@ grab the necessary changes with `git pull --rebase` and resolve any merge confli
 
 ## Break (10 min)
 
-## Integration Manager Workflow (Distributed Workflow) (5 min)
+## Integration Manager Workflow (Distributed Workflow) (10 min)
 
 These approaches all use multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible and is managed by the project maintainer), and changes are submitted via pull request.
 
@@ -265,12 +280,12 @@ $ git fetch
 $ git diff origin/master
 ```
 
+### Amending Commits 
 One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to try that commit again, you can run `git commit --amend` with the `--amend` option:
 
 ```sh
 $ git commit --amend
 ```
-
 
 ### Git Blame
 
