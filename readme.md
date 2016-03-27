@@ -264,6 +264,14 @@ Use `git-fetch` and `git-diff` to see the changes instead!
 $ git fetch
 $ git diff origin/master
 ```
+
+One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to try that commit again, you can run `git commit --amend` with the `--amend` option:
+
+```sh
+$ git commit --amend
+```
+
+
 ### Git Blame
 
 `git blame <file_name>`
@@ -334,7 +342,7 @@ it, looking for ways to improve it.
 Additionally, many work environments practice some form of code review, so it's
 good to get practice in giving feedback to others now.
 
-Furthermore, `Github` allows us to comment directly on `PRs`, so we can easily incorporate informal code reviews into our workflow. 
+Furthermore, `Github` allows us to comment directly on `PRs`, so we can easily incorporate informal code reviews into our workflow.
 
 Interested to read more about [code reviews?](https://github.com/ga-dc/project2-code-review/blob/master/code_review_primer.md)
 
