@@ -138,7 +138,7 @@ Work to display the `text` of a random compliment in `data.js` by writing the co
 </div>
 ```
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/c54fa09c4b7a54ade8b746425a232e260425a9b1)
+[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/3b70377262d59351cd7b89cc8fa9880ebf051fd7)
 
 - **Student 1**
 Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
