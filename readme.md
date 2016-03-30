@@ -80,7 +80,7 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 ### PRs and Merging (15 min)
 
-- **Student 1**
+**Student 1**
 
 * Check out a new feature branch and create a `js/app.js` file.
 
@@ -90,7 +90,7 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
   [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
 
-- **Student 2**
+**Student 2**
 
 * Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
 
