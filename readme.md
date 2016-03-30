@@ -151,7 +151,7 @@ Now, we have only the code we need and can git commit.
 
 ### Merge Conflicts (25 min)
 
-- **Both Students**
+**Both Students**
 
 * First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
 
@@ -174,21 +174,21 @@ Now, we have only the code we need and can git commit.
 
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/3b70377262d59351cd7b89cc8fa9880ebf051fd7)
 
-- **Student 1**
+**Student 1**
 
 * Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
 
-- **Student 2**
+**Student 2**
 
 * Change our Angular App name from `compliments` to `angularComp` and ALL instances of it referenced in our application!
 
 * Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
 
-- **Student 1**
+**Student 1**
 
 * Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
 
-- **Student 2**
+**Student 2**
 
 * Commit your changes, and still on your `feature` branch, pull the `git-teams-starter`changes from GitHub.
 
@@ -201,10 +201,12 @@ git checkout git-teams-starter
 git pull origin git-teams-starter
 git push <remote> <your-branchname>
 ```
-- **Both Students**
+**Both Students**
+
 On `Student 2's computer`, look over the merge conflicts, resolve it locally, commit, and push.
 
-- **Student 1**
+**Student 1**
+
 Pull down the changes to `git-teams-starter`
 
 ## BREAK (10 min)
@@ -252,16 +254,16 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Feel free to modify the index.html as well.
 - Both students should add and commit changes.
 
-- **Added Bonus**
+**Added Bonus**
 
 For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
 
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
 
-- **Student 1**
+**Student 1**
 push branch and make a pr, and merge your changes.
 
-- **Student 2**
+**Student 2**
 grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
 
 ## Break (10 min)
