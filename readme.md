@@ -42,7 +42,7 @@ interfering. When a feature is complete, it can be merged back into master.
 ## You Do: Emergency Compliment Angular - Setup (5 min)
 
 Form pairs. To start:
-- One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment) to their GitHub
+- One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter) to their GitHub
 - Add the second student as a collaborator to this repository
 - The second student should clone the newly-forked repo, so they have a local copy and can start working
 
@@ -172,7 +172,7 @@ Now, we have only the code we need and can git commit.
 </div>
 ```
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/c54fa09c4b7a54ade8b746425a232e260425a9b1)
+[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/3b70377262d59351cd7b89cc8fa9880ebf051fd7)
 
 - **Student 1**
 
@@ -256,7 +256,7 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 
 For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/397766964b0d69f063476422d65bd8f2aefe70a0)
+[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
 
 - **Student 1**
 push branch and make a pr, and merge your changes.
