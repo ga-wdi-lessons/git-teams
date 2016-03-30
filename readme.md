@@ -78,18 +78,23 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 **Throughout today's exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
 
-### PRs and Merging (10 min)
+### PRs and Merging (15 min)
 
-- **Student 1** Check out a new feature branch and create a `js/app.js` file. Then, work with your partner to write code for our first module in `js/app.js` to instantiate our `compliments` Angular App.
+- **Student 1**
 
-- Don't forget to add a Script Tag for `js/app.js` in our `index.html`!
+* Check out a new feature branch and create a `js/app.js` file.
+
+* Then, work with your partner to write code for our first module in `js/app.js` to instantiate our `compliments` Angular App.
+
+* Don't forget to add a Script Tag for `js/app.js` in our `index.html`!
 
   [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
 
 - **Student 2**
-Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
 
-Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app:
+* Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
+
+* Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app:
 
 ```js
 
@@ -106,14 +111,17 @@ Inside of our `compliments.controller.js` add in the following code to instantia
 }());
 
 ```
-Make sure to also add our Script tag in our `index.html`!
+* Make sure to also add our Script tag in our `index.html`!
 
 - **Both Students**
-Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
 
-Each student should add a comment to the PR! It should be an inline comment asking a question about the code, a suggestion or just adding an observation!
+* Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
 
-If there are no conflicts, merge your pull request. If there are, you will need to  `git pull` the latest changes, then `commit` again. Once your changes are successfully merged, delete your feature branches, check out `git-teams-starter`, and `pull`.
+* Each student should add a comment to the PR! It should be an inline comment asking a question about the code, a suggestion or just adding an observation!
+
+* If there are no conflicts, merge your pull request and delete your feature branches!
+
+* If there are merge conflicts, WAIT to merge the conflicts until the next `You-Do`.  You will need to  `git pull` the latest changes, resolve the conflict, then `commit` again.
 
 **Reminders**:
 
@@ -124,14 +132,40 @@ If there are no conflicts, merge your pull request. If there are, you will need 
 
 Next, try to break it!!!!
 
-### Merge Conflicts (15 min)
+## Resolving Merge Conflicts (5 min)
+When you encounter a `merge conflict`,instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this:
+```
+<<<<<<< HEAD
+var x = 1,
+y = 2;
+=======
+var x;
+>>>>>>> other_branch
+```
+The first section is the version that exists on the `current branch`; the second section is the version that exists on the branch you're trying to pull in. Figure out which version of the code makes the most sense moving forward, delete the version that doesn't and all the extra stuff that Git adds (<<<<<<<, =======, etc.) and run `git commit` to finalize the merge.
+
+For example, if we decided we only needed var x, delete the other "stuff":
+
+`var x;`
+Now, we have only the code we need and can git commit.
+
+### Merge Conflicts (25 min)
 
 - **Both Students**
-Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment
 
-Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`.
+* First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
 
-Work to display the `text` of a random compliment in `data.js` by writing the code within the below div:
+* `Locally`, make sure you are checked out to our `git-teams-starter` branch
+
+* Then, do a `git pull origin git-teams-starter` to receive the latest changes.
+
+**Note** If you encounter a merge conflict, work together to resolve it before continuing. Then push up the changes!
+
+* Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment.
+
+* Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`.
+
+* Work to display the `text` of a random compliment in `data.js` by writing the code within the below div:
 
 ```js
 <div data-ng-controller='complimentsController as vm'>
@@ -141,56 +175,27 @@ Work to display the `text` of a random compliment in `data.js` by writing the co
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/c54fa09c4b7a54ade8b746425a232e260425a9b1)
 
 - **Student 1**
-Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
+
+* Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
 
 - **Student 2**
-Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
 
-- **Both Students**
-Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
+* Change our Angular App name from `compliments` to `angularComp` and ALL instances of it referenced in our application!
+
+* Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
 
 - **Student 1**
-Merge your changes into `git-teams-starter` on GitHub.
+
+* Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
 
 - **Student 2**
-Check your PR -- there should be a merge conflict!
 
-When you finish:
+* Commit your changes, and still on your `feature` branch, pull the `git-teams-starter`changes from GitHub.
 
-Don't worry about writing any code to resolve the merge conflict now, instead, decide between your group how to think about and outline the steps for the next commit.
+* If there is a merge conflict, work together to resolve it!
 
-### Think/Pair/Share - 5/5 (10 min)
+### Resolving Merge Conflicts `Git Pull (Merge Conflicts)`
 
-Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
-
-Some things to consider:
-
-1. Who will resolve the conflict?
-2. What are the necessary commands you will need to run to incorporate those changes?
-3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
-
-## BREAK (10 min)
-
-## Resolving Merge Conflicts (5 min)
-In cases like the one we have created, instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this:
-```
-<<<<<<< HEAD
-var x = 1,
-y = 2;
-=======
-var x;
->>>>>>> other_branch
-```
-The first section is the version that exists on the current branch; the second section is the version that exists on the branch you're trying to pull in. Figure out which version of the code makes the most sense moving forward, delete the version that doesn't and all the extra stuff that Git adds (<<<<<<<, =======, etc.) and run `git commit` to finalize the merge.
-
-For example, if we decided we only needed var x, delete the other "stuff":
-
-`var x;`
-Now, we have only the code we need and can git commit.
-
-## You Do: `Git Pull (Merge Conflicts)` (10 min)
-
-- **Student 2**
 ``` bash
 git checkout git-teams-starter
 git pull origin git-teams-starter
@@ -201,6 +206,18 @@ On `Student 2's computer`, look over the merge conflicts, resolve it locally, co
 
 - **Student 1**
 Pull down the changes to `git-teams-starter`
+
+## BREAK (10 min)
+
+### Think/Pair/Share - 5/5 (10 min)
+
+Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
+
+Some things to consider:
+
+1. How did you go about resolving merge conflicts? What process did you take?
+2. What were the necessary commands to run to incorporate those changes?
+3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
 
 ## Rebasing (5 min)
 
@@ -224,9 +241,10 @@ Rebase is extremely useful for cleaning up your commit history, but it also carr
 
 Like git merge, git rebase also sometimes runs into merge conflicts that need to be resolved. The procedure for doing this is almost the same; once you fix the conflicts, run `git rebase --continue` to complete the rebase.
 
-## You Do: Resolve Merge Conflicts w/ Rebase (20 min)
+## You Do: Resolve Merge Conflicts w/ Rebase (25 min)
 
 **Both Students**
+
 - Check out a new feature branch.
 - Create a `styles.css` file and add CSS to our emergency compliment page
 - Link to your stylesheet from the `<head>` of `index.html`.
@@ -235,15 +253,13 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Both students should add and commit changes.
 
 - **Added Bonus**
+
 For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
 
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/397766964b0d69f063476422d65bd8f2aefe70a0)
 
 - **Student 1**
 push branch and make a pr, and merge your changes.
-
-- **Student 2**
-then try to do the same thing.
 
 - **Student 2**
 grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
