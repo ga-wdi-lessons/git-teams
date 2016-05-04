@@ -8,8 +8,9 @@
 ## Everyday Feature Workflow
 
 1. Switch to the master branch and get the lastest version
-  * `git pull`.
-2. Checkout a feature branch 
+  * `git checkout master`.
+  * `git pull origin master`.
+2. Checkout a feature branch
   * `git checkout -b my_branch_name`
 3. Do your work
   * `git add`
@@ -47,6 +48,14 @@
   * `git status` - note the files that are listed as *both modified*
 2. Open those files in your text editor.
 3. Identify areas tagged with `>>>>>>>>>`, `==========`, and `<<<<<<<<<<`.
+```
+<<<<<<< HEAD:file.txt
+This is the original code in your current branch
+=======
+This is the modified code
+>>>>>>> 77976da35a11db4580b80ae27e8d65caf5208086:file.txt
+
+```
 4. Fix all the code between those lines, and remove the lines.
   * Ideally, run the code locally and confirm it works.
 5. Commit your changes:
@@ -55,3 +64,4 @@
 6. Push your updated branch:
   * `git push origin branch_name`
 
+![workflow](github_workflows.jpg)
