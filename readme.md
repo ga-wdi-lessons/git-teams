@@ -56,7 +56,7 @@ git checkout git-teams-starter
 
 How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
 
-[Centralized Workflow Diagram](https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/00/pageSections/07/contentFullWidth/02/content_files/file/git-workflow-svn.png)
+[Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
 
 **(+)** Very simple
 
@@ -66,7 +66,7 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 
 How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
 
-[Feature Branch Workflow](https://www.atlassian.com/pt/git/workflows/pageSections/00/contentFullWidth/0/tabs/01/pageSections/07/contentFullWidth/0/content_files/file0/document/git-workflow-feature-branch-1.png)
+[Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 **(+)** Better isolation than Centralized model, but sharing is still easy. Very flexible.
 
