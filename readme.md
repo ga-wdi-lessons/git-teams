@@ -8,7 +8,7 @@
 
 ## Framing: Review Basic Git Workflow (5 mins)
 
-Although you've all been using Git and Github for over a month, you've largely been doing so individually. In the wild, software development rarely takes place in this kind of workflow. When you are working in the industry, you will likely be part of a development team. You will definitely be part of a development team as you complete Project 3. Clear, replicable version control practices, combined with good communication, can make collaboration easier and more efficient. In order to build up to that, we need to make sure we're building on a solid foundation of Git basics.
+Although you've all been using Git and Github for a couple months, you've largely been doing so individually. In the wild, software development rarely takes place in this kind of workflow. When you are working in the industry, you will likely be part of a development team. You will definitely be part of a development team as you complete Project 3. Clear, replicable version control practices, combined with good communication, can make collaboration easier and more efficient. In order to build up to that, we need to make sure we're building on a solid foundation of Git basics.
 
 ### Why Use Version Control?
 When you're working on a project, you sometimes want to be able to retrace your steps, or even revert your project to a previous state.  And often (particularly in the workplace) you need a way to effectively collaborate on a single project without stepping on each others' toes. Version control tools address all of these needs.
@@ -209,8 +209,6 @@ On `Student 2's computer`, look over the merge conflicts, resolve it locally, co
 
 Pull down the changes to `git-teams-starter`
 
-## BREAK (10 min)
-
 ### Think/Pair/Share - 5/5 (10 min)
 
 Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
@@ -221,17 +219,13 @@ Some things to consider:
 2. What were the necessary commands to run to incorporate those changes?
 3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
 
-## Rebasing (5 min)
+## Rebasing (Read on your own)
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
 [Git Merge Versus Rebase](https://gist.github.com/beckybeauchamp1/51a805c61e8b30624cc1)
 
 [Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
-
-### Turn and Talk - 2/3 (5 min)
-
-Turn to your neighbor and discuss why you might use a `rebase` instead of a `git merge`
 
 ***Example Scenario:***
 
@@ -243,7 +237,7 @@ Rebase is extremely useful for cleaning up your commit history, but it also carr
 
 Like git merge, git rebase also sometimes runs into merge conflicts that need to be resolved. The procedure for doing this is almost the same; once you fix the conflicts, run `git rebase --continue` to complete the rebase.
 
-## You Do: Resolve Merge Conflicts w/ Rebase (25 min)
+## Optional Practice: Resolve Merge Conflicts w/ Rebase
 
 **Both Students**
 
@@ -266,7 +260,6 @@ push branch and make a pr, and merge your changes.
 **Student 2**
 grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
 
-## Break (10 min)
 
 ## Integration Manager Workflow (Distributed Workflow) (5 min)
 
@@ -278,7 +271,7 @@ How It Works: One collaborator plays the role of 'Integration Manager'. This mea
 
 **(-)** Could get overwhelming for large projects.
 
-## Git Workflow Tips (10 min)
+## Git Workflow Tips
 
 ### Using `git-fetch` and `git-diff`
 
@@ -350,7 +343,7 @@ If you are adding an Alias to your bash profile you might have to reload to see 
 
 [Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
 
-## Software Development and Collaboration (5 min)
+## Software Development and Collaboration 
 
 ### Project Week: What does that mean for you?
 
