@@ -42,7 +42,7 @@ interfering. When a feature is complete, it can be merged back into master.
 
 Form pairs. To start:
 - One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter) to their GitHub
-- Add the second student as a collaborator to this repository
+- Add the second student as a collaborator to this repository. You can do this by going to the `Settings` tab on the repo and selecting `Collaborators & Teams` under `Options.`
 - The second student should clone the newly-forked repo, so they have a local copy and can start working
 
 ```bash
