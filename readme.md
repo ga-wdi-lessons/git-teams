@@ -4,7 +4,6 @@
 - Distinguish between git workflow models to organize code changes and collaborate as a team
 - Use branches and pull requests to isolate changes tied to specific features
 - Efficiently and correctly resolve merge conflicts
-- Explain the difference between `rebase` and `merge`
 
 ## Framing: Review Basic Git Workflow (5 mins)
 
@@ -149,7 +148,7 @@ For example, if we decided we only needed var x, delete the other "stuff":
 `var x;`
 Now, we have only the code we need and can git commit.
 
-### Merge Conflicts (25 min)
+### You Do: Merge Conflicts (25 min)
 
 **Both Students**
 
@@ -219,6 +218,8 @@ Some things to consider:
 2. What were the necessary commands to run to incorporate those changes?
 3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
 
+##[Pennies!](https://github.com/ga-wdi-exercises/pennies) (20 minutes)
+
 ## Rebasing (Read on your own)
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
@@ -261,7 +262,7 @@ push branch and make a pr, and merge your changes.
 grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
 
 
-## Integration Manager Workflow (Distributed Workflow) (5 min)
+## Integration Manager Workflow (Distributed Workflow)
 
 These approaches all use multiple remote repos; typically, everyone has their own fork of the 'original' project (the version of the repo that's publicly visible and is managed by the project maintainer), and changes are submitted via pull request.
 
@@ -343,7 +344,7 @@ If you are adding an Alias to your bash profile you might have to reload to see 
 
 [Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
 
-## Software Development and Collaboration 
+## Software Development and Collaboration
 
 ### Project Week: What does that mean for you?
 
