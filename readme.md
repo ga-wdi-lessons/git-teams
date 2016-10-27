@@ -5,17 +5,11 @@
 - Use branches and pull requests to isolate changes tied to specific features
 - Efficiently and correctly resolve merge conflicts
 
-## Framing: Review Basic Git Workflow (5 mins)
+## Framing
 
 Although you've all been using Git and Github for a couple months, you've largely been doing so individually. In the wild, software development rarely takes place in this kind of workflow. When you are working in the industry, you will likely be part of a development team. You will definitely be part of a development team as you complete Project 3. Clear, replicable version control practices, combined with good communication, can make collaboration easier and more efficient. In order to build up to that, we need to make sure we're building on a solid foundation of Git basics.
 
-### Why Use Version Control?
-When you're working on a project, you sometimes want to be able to retrace your steps, or even revert your project to a previous state.  And often (particularly in the workplace) you need a way to effectively collaborate on a single project without stepping on each others' toes. Version control tools address all of these needs.
-
-### Why Git?
-Git, apart from being free and open source, is also in many ways a superior system to many older version control tools (such as Subversion) because it is a "distributed" version control tool. This means that there is no centralized approval structure for making changes to the project; instead, every student who clones the repository has their own complete copy, which they can then edit and change. This makes it much easier to use when working in groups.
-
-### Review Git Branching
+### Git Branching
 
 A branch in git is just a label on a particular commit in a repository, along with all of its history (parent commits). When we commit, the current branch label moves forward to the new commit. Another way to say that is the branch label always stays at the tip of the branch.
 
@@ -25,35 +19,38 @@ A branch in git is just a label on a particular commit in a repository, along wi
 
 > From [Atlassian - Git Branching Tutorial](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
 
-Q. Why is branching an important part of git?
----
+<details>
+  <summary><strong>Why is branching an important part of git?</strong></summary>
 
-> A. Branches are useful for many reasons, but some of the most common ones:
+  > 1. To allow experimentation. By switching to a new branch, we can experiment,
+  and if the experiment fails, we can delete it and easily switch back to master
+  (or another branch of our choice). If it succeeds, we can merge those changes
+  into master.
+  >
+  > 2. To allow work to proceed on multiple features (or by multiple people) without
+  interfering. When a feature is complete, it can be merged back into master.
+  >
+  > 3. To allow easy bug fixes on a stable version while features are being developed.
 
-> 1. To allow experimentation. By switching to a new branch, we can experiment,
-and if the experiment fails, we can delete it and easily switch back to master
-(or another branch of our choice). If it succeeds, we can merge those changes
-into master.
-2. To allow work to proceed on multiple features (or by multiple people) without
-interfering. When a feature is complete, it can be merged back into master.
-3. To allow easy bug fixes on a stable version while features are being developed.
+</details>
 
 ## You Do: Emergency Compliment Angular - Setup (5 min)
 
-Form pairs. To start:
-- One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter) to their GitHub
-- Add the second student as a collaborator to this repository. You can do this by going to the `Settings` tab on the repo and selecting `Collaborators & Teams` under `Options.`
-- The second student should clone the newly-forked repo, so they have a local copy and can start working
+Form pairs and do the following...
+* One student should fork and clone the [starter code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter)
+* Add the second student as a collaborator to this repository. You can do this by going to the `Settings` tab on the repo and selecting `Collaborators & Teams` under `Options`
+* The second student should clone the newly-forked repo so they have a local copy
+* Both students should start from the `git-teams-starter` branch...
 
 ```bash
-git checkout git-teams-starter
+$ git checkout git-teams-starter
 ```
 
 ## Single-Remote Workflows (15 min)
 
 ### Centralized Workflow
 
-How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
+**How It Works:** The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. Before they push, however, they need to run `git fetch` / `git pull` to make sure that their master branch isn't out of date.
 
 [Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
 
@@ -63,23 +60,25 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 
 ### Feature Branch Workflow
 
-How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
+**How It Works:** This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches, which helps to keep feature-related commits isolated. Instead of pushing changes up directly, collaborators...
+  1. Push up changes to a new remote branch rather than `master`
+  2. Submit a pull request to the remote repo's `master` branch.
 
 [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 **(+)** Better isolation than Centralized model, but sharing is still easy. Very flexible.
 
-**(-)** Sometimes it's too flexible - it doesn't distinguish in any meaningful way between different branches, and that lack of structure can be problematic for larger projects.
+**(-)** Sometimes it's too flexible. It doesn't distinguish in any meaningful way between different branches, and that lack of structure can be problematic for larger projects.
 
-Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
+> Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
-## You Do: Merging: The Good, The Bad, and The Ugly (Feature Branch Workflow)
+## You Do: Merging - The Good, The Bad and The Ugly (Feature Branch Workflow)
 
 **Throughout today's exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
 
 ### PRs and Merging (15 min)
 
-**Student 1**
+#### Student 1
 
 * Check out a new feature branch and create a `js/app.js` file.
 
@@ -87,32 +86,25 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 * Don't forget to add a Script Tag for `js/app.js` in our `index.html`!
 
-  [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
+> [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
 
-**Student 2**
+#### Student 2
 
 * Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
 
 * Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app:
 
 ```js
+var app = angular.module("compliments");
+app.controller("complimentsController", ComplimentsController);
 
-`use strict`;
-
-(function(){
-  var app = angular.module("compliments");
-  app.controller("complimentsController", ComplimentsController);
-
-  function ComplimentsController(){
-    var vm = this;
-  }
-
-}());
-
+function ComplimentsController(){
+  var vm = this;
+}
 ```
-* Make sure to also add our Script tag in our `index.html`!
+> Make sure to also add our Script tag in our `index.html`!
 
-- **Both Students**
+#### Both Students
 
 * Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
 
@@ -122,18 +114,20 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 * If there are merge conflicts, WAIT to merge the conflicts until the next `You-Do`.  You will need to  `git pull` the latest changes, resolve the conflict, then `commit` again.
 
-**Reminders**:
+#### Reminders
 
 1. If you already have an `emergency_compliment` repo, you can clone it down and give it a different name using: `git clone <repo url> <name for repo>`
 2. Make sure you are starting your branches from an `git-teams-starter`
 3. If you need to get more branches, or had forked previously, you are going to want to set the `ga-dc` version of `emergency-compliment` as your `upstream` remote.
 4. Be mindful of the commands you are running, e.g. careful not to run `git checkout -b` when you are trying to switch between branches, this will create new branches.
 
-Next, try to break it!!!!
+Next, try to break it!
 
 ## Resolving Merge Conflicts (5 min)
-When you encounter a `merge conflict`,instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this:
-```
+
+When you encounter a "merge conflict," instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this...
+
+```js
 <<<<<<< HEAD
 var x = 1,
 y = 2;
@@ -141,16 +135,20 @@ y = 2;
 var x;
 >>>>>>> other_branch
 ```
-The first section is the version that exists on the `current branch`; the second section is the version that exists on the branch you're trying to pull in. Figure out which version of the code makes the most sense moving forward, delete the version that doesn't and all the extra stuff that Git adds (<<<<<<<, =======, etc.) and run `git commit` to finalize the merge.
 
-For example, if we decided we only needed var x, delete the other "stuff":
+The first section is the version that exists on the current branch. The second section is the version that exists on the branch you're trying to pull in. Figure out which version of the code makes the most sense moving forward, delete the version that doesn't and all the extra stuff that Git adds (<<<<<<<, =======, etc.) and run `git commit` to finalize the merge.
 
-`var x;`
-Now, we have only the code we need and can git commit.
+For example, if we decided we only needed var x, delete the other "stuff" so that only the following code exists...
+
+```js
+var x;
+```
+
+Then `git commit`.
 
 ### You Do: Merge Conflicts (25 min)
 
-**Both Students**
+#### Both Students
 
 * First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
 
@@ -158,7 +156,7 @@ Now, we have only the code we need and can git commit.
 
 * Then, do a `git pull origin git-teams-starter` to receive the latest changes.
 
-**Note** If you encounter a merge conflict, work together to resolve it before continuing. Then push up the changes!
+> Note: If you encounter a merge conflict, work together to resolve it before continuing. Then push up the changes!
 
 * Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment.
 
@@ -171,23 +169,23 @@ Now, we have only the code we need and can git commit.
 </div>
 ```
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/3b70377262d59351cd7b89cc8fa9880ebf051fd7)
+> [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/3b70377262d59351cd7b89cc8fa9880ebf051fd7)
 
-**Student 1**
+#### Student 1
 
 * Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
 
-**Student 2**
+#### Student 2
 
 * Change our Angular App name from `compliments` to `angularComp` and ALL instances of it referenced in our application!
 
 * Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
 
-**Student 1**
+#### Student 1
 
 * Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
 
-**Student 2**
+#### Student 2
 
 * Commit your changes, and still on your `feature` branch, pull the `git-teams-starter`changes from GitHub.
 
@@ -200,27 +198,29 @@ git checkout git-teams-starter
 git pull origin git-teams-starter
 git push <remote> <your-branchname>
 ```
-**Both Students**
+#### Both Students
 
 On `Student 2's computer`, look over the merge conflicts, resolve it locally, commit, and push.
 
-**Student 1**
+#### Student 1
 
 Pull down the changes to `git-teams-starter`
 
-### Think/Pair/Share - 5/5 (10 min)
+### Think/Pair/Share (10 minutes)
+
+> 5 minutes exercise. 5 minutes review.
 
 Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
 
-Some things to consider:
+Some things to consider...
 
 1. How did you go about resolving merge conflicts? What process did you take?
 2. What were the necessary commands to run to incorporate those changes?
 3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
 
-##[Pennies!](https://github.com/ga-wdi-exercises/pennies) (20 minutes)
+---
 
-## Rebasing (Read on your own)
+## Read On Your Own: Rebasing
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
@@ -238,9 +238,9 @@ Rebase is extremely useful for cleaning up your commit history, but it also carr
 
 Like git merge, git rebase also sometimes runs into merge conflicts that need to be resolved. The procedure for doing this is almost the same; once you fix the conflicts, run `git rebase --continue` to complete the rebase.
 
-## Optional Practice: Resolve Merge Conflicts w/ Rebase
+## Practice On Your Own: Resolve Merge Conflicts
 
-**Both Students**
+#### Both Students
 
 - Check out a new feature branch.
 - Create a `styles.css` file and add CSS to our emergency compliment page
@@ -249,17 +249,19 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Feel free to modify the index.html as well.
 - Both students should add and commit changes.
 
-**Added Bonus**
+#### Bonus
 
 For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
 
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
+> [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
 
-**Student 1**
-push branch and make a pr, and merge your changes.
+#### Student 1
 
-**Student 2**
-grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
+Push branch, make a pull request and merge your changes.
+
+#### Student 2
+
+Grab the necessary changes with `git pull --rebase <remote> <branch> `, fix any merge conflicts, run `git add` then resolve with `git rebase --continue`.
 
 
 ## Integration Manager Workflow (Distributed Workflow)
@@ -290,7 +292,7 @@ One of the common undos takes place when you commit too early and possibly forge
 ```sh
 $ git commit --amend
 ```
-### Deleting Branches: Locally VS Remote
+### Deleting Branches: Locally vs. Remote
 
 Locally:
 
@@ -338,15 +340,15 @@ If you are adding an Alias to your bash profile you might have to reload to see 
 
 `git-wtf`: Script that displays the state of your repository in a readable and easy-to-scan format
 
-[Open Source Scripts/Git Tools](http://git-wt-commit.rubyforge.org/)
+> [Open Source Scripts/Git Tools](http://git-wt-commit.rubyforge.org/)
 
 `git-create`: Bash function that creates a github repo from the command line
 
-[Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
+> [Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
 
 ## Software Development and Collaboration
 
-### Project Week: What does that mean for you?
+### Project Week: What Does That Mean For You?
 
 Regardless of the `git` approach you decide to take for Project 3, it's important that you establish a workflow and plan!
 
@@ -356,7 +358,7 @@ When planning these sprints, set concrete goals for yourself. I'm going to achie
 
 It is VITAL that you guys schedule yourselves well.
 
-### Why do code reviews?
+### Why Do Code Reviews?
 
 Jeff Atwood (co-founder of Stack Exchange, and a smart dude) has written a
 [great summary](http://blog.codinghorror.com/code-reviews-just-do-it/) which I
@@ -377,19 +379,23 @@ Interested to read more about [code reviews?](https://github.com/ga-dc/project2-
 ## Closing (5 min)
 
 ### Quiz Questions
-- Identify the syntax needed to create a new branch. How about creating a new branch and switching to it?
-- Why should you never work on the same files on different branches?
-- Explain the difference between rebase and merge
+
+* Identify the syntax needed to create a new branch. How about creating a new branch and switching to it?
+* Why should you never work on the same files on different branches?
+* Explain the difference between rebase and merge
 
 ### Cheat Sheets
-- [Github Official](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
-- [Interactive Git](http://ndpsoftware.com/git-cheatsheet.html#loc=stash;) (Uses slightly different terminology that we're used to, but nifty)
+
+* [Github Official](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+* [Interactive Git](http://ndpsoftware.com/git-cheatsheet.html#loc=stash;) (Uses slightly different terminology that we're used to, but nifty)
 
 ### Rebase vs Merge
+
 ![Rebase vs Merge](https://raw.githubusercontent.com/gitforteams/diagrams/master/flowcharts/rebase-or-merge.png)
 
 ### Further Reading
-- [Jesse's blog post!](https://jesse.sh/rebases/)
-- [Git Workflows Overview](https://www.atlassian.com/git/tutorials/comparing-workflows)
-- [Git Teams](http://gitforteams.com/)
-- [Git Alias](https://githowto.com/aliases)
+
+* [Jesse's blog post!](https://jesse.sh/rebases/)
+* [Git Workflows Overview](https://www.atlassian.com/git/tutorials/comparing-workflows)
+* [Git Teams](http://gitforteams.com/)
+* [Git Alias](https://githowto.com/aliases)
