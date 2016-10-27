@@ -34,7 +34,7 @@ A branch in git is just a label on a particular commit in a repository, along wi
 
 </details>
 
-## You Do: Emergency Compliment Angular - Setup (5 min)
+## You Do: Emergency Compliment Angular - Setup
 
 Form pairs and do the following...
 * One student should fork and clone the [starter code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter)
@@ -46,7 +46,7 @@ Form pairs and do the following...
 $ git checkout git-teams-starter
 ```
 
-## Single-Remote Workflows (15 min)
+## Single-Remote Workflows
 
 ### Centralized Workflow
 
@@ -74,7 +74,7 @@ $ git checkout git-teams-starter
 
 ## You Do: Merging - The Good, The Bad and The Ugly (Feature Branch Workflow)
 
-**Throughout today's exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
+**Throughout these exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
 
 ### PRs and Merging (15 min)
 
@@ -123,7 +123,7 @@ function ComplimentsController(){
 
 Next, try to break it!
 
-## Resolving Merge Conflicts (5 min)
+## Resolving Merge Conflicts
 
 When you encounter a "merge conflict," instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this...
 
@@ -146,7 +146,7 @@ var x;
 
 Then `git commit`.
 
-### You Do: Merge Conflicts (25 min)
+### You Do: Merge Conflicts
 
 #### Both Students
 
@@ -206,13 +206,9 @@ On `Student 2's computer`, look over the merge conflicts, resolve it locally, co
 
 Pull down the changes to `git-teams-starter`
 
-### Think/Pair/Share (10 minutes)
+### Think/Pair/Share
 
-> 5 minutes exercise. 5 minutes review.
-
-Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
-
-Some things to consider...
+Write down answers to the following questions and discuss with your partner...
 
 1. How did you go about resolving merge conflicts? What process did you take?
 2. What were the necessary commands to run to incorporate those changes?
@@ -220,7 +216,9 @@ Some things to consider...
 
 ---
 
-## Read On Your Own: Rebasing
+> The rest of the content in this lesson plan is optional, but will go a long way in stepping up your git team game!
+
+## Rebasing
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
@@ -238,7 +236,7 @@ Rebase is extremely useful for cleaning up your commit history, but it also carr
 
 Like git merge, git rebase also sometimes runs into merge conflicts that need to be resolved. The procedure for doing this is almost the same; once you fix the conflicts, run `git rebase --continue` to complete the rebase.
 
-## Practice On Your Own: Resolve Merge Conflicts
+## You Do: Resolve Merge Conflicts With Rebase
 
 #### Both Students
 
@@ -246,12 +244,12 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Create a `styles.css` file and add CSS to our emergency compliment page
 - Link to your stylesheet from the `<head>` of `index.html`.
 - Each add unique CSS styling of your choosing.
-- Feel free to modify the index.html as well.
+- Feel free to modify the `index.html` as well.
 - Both students should add and commit changes.
 
 #### Bonus
 
-For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
+Both students should work on functionality to display all of the compliments instead of one.
 
 > [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
 
@@ -280,7 +278,7 @@ How It Works: One collaborator plays the role of 'Integration Manager'. This mea
 
 What if you are a little out of sync with your teammates and are worried that a `git pull` will result in hours of working through merge conflicts?
 
-Use `git-fetch` and `git-diff` to see the changes instead!
+Use `git fetch` and `git diff` to see the changes instead!
 
 ```bash
 $ git fetch <remote> <branch>
@@ -292,6 +290,7 @@ One of the common undos takes place when you commit too early and possibly forge
 ```sh
 $ git commit --amend
 ```
+
 ### Deleting Branches: Locally vs. Remote
 
 Locally:
@@ -314,7 +313,7 @@ To find out who changed a file, you can run git blame against a single file, and
 
 Additionally, this feature is available to view on Github!
 
-To use git blame on `GitHub`:
+To use git blame on `GitHub`...
 
 * Navigate to a repository, and click on a file that you're interested in.
 * Click on the Blame button in the upper-right tab list.
@@ -326,7 +325,8 @@ Aliases allow us to configure shortcuts and can help speed up our workflow!
 
 We can configure them in our `.gitconfig` or `.bash_profile`
 
-Example Aliases:
+Example Aliases...
+
 ```
 [alias]
   g = git
@@ -376,7 +376,7 @@ Furthermore, `Github` allows us to comment directly on `PRs`, so we can easily i
 
 Interested to read more about [code reviews?](https://github.com/ga-dc/project2-code-review/blob/master/code_review_primer.md)
 
-## Closing (5 min)
+----
 
 ### Quiz Questions
 
