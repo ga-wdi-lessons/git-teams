@@ -54,8 +54,11 @@ git checkout git-teams-starter
 ### Centralized Workflow
 
 How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
+- [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-(and-stashing%29/)
 
-[Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
+![Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
+
+> From [Atlassian - Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow)
 
 **(+)** Very simple
 
@@ -65,7 +68,9 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 
 How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
 
-[Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+![Feature Branch Workflow](https://wac-cdn.atlassian.com/dam/jcr:80d671b1-8a4b-4378-914c-e25fe3d2dcce/07.svg?cdnVersion=dj)
+
+> From [Atlassian - Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
 
 **(+)** Better isolation than Centralized model, but sharing is still easy. Very flexible.
 
@@ -218,13 +223,20 @@ Some things to consider:
 2. What were the necessary commands to run to incorporate those changes?
 3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
 
-##[Pennies!](https://github.com/ga-wdi-exercises/pennies) (20 minutes)
+## [Pennies!](https://github.com/ga-wdi-exercises/pennies) (20 minutes)
 
 ## Rebasing (Read on your own)
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
-[Git Merge Versus Rebase](https://gist.github.com/beckybeauchamp1/51a805c61e8b30624cc1)
+## Git Merge
+
+![Git Pull/Merge](http://code4reference.com/wp-content/uploads/2013/06/git-pull.jpg)
+
+
+## Git Rebase
+
+![Git Rebase](http://code4reference.com/wp-content/uploads/2013/06/git-pull-rebase1.jpg)
 
 [Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 
