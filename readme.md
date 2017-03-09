@@ -5,7 +5,7 @@
 - Use branches and pull requests to isolate changes tied to specific features
 - Efficiently and correctly resolve merge conflicts
 
-## Framing: Review Basic Git Workflow (5 mins)
+## Framing: Review Basic Git Workflow
 
 Although you've all been using Git and Github for a couple months, you've largely been doing so individually. In the wild, software development rarely takes place in this kind of workflow. When you are working in the industry, you will likely be part of a development team. You will definitely be part of a development team as you complete Project 3. Clear, replicable version control practices, combined with good communication, can make collaboration easier and more efficient. In order to build up to that, we need to make sure we're building on a solid foundation of Git basics.
 
@@ -38,7 +38,7 @@ into master.
 interfering. When a feature is complete, it can be merged back into master.
 3. To allow easy bug fixes on a stable version while features are being developed.
 
-## You Do: Emergency Compliment Angular - Setup (5 min)
+## Exercise: Emergency Compliment Angular - Setup
 
 Form pairs. To start:
 - One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter) to their GitHub
@@ -49,13 +49,16 @@ Form pairs. To start:
 git checkout git-teams-starter
 ```
 
-## Single-Remote Workflows (15 min)
+## Single-Remote Workflows
 
 ### Centralized Workflow
 
 How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
+- [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-(and-stashing%29/)
 
-[Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
+![Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
+
+> From [Atlassian - Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows#centralized-workflow)
 
 **(+)** Very simple
 
@@ -65,7 +68,9 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 
 How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
 
-[Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+![Feature Branch Workflow](https://wac-cdn.atlassian.com/dam/jcr:80d671b1-8a4b-4378-914c-e25fe3d2dcce/07.svg?cdnVersion=dj)
+
+> From [Atlassian - Comparing Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow)
 
 **(+)** Better isolation than Centralized model, but sharing is still easy. Very flexible.
 
@@ -73,11 +78,11 @@ How It Works: This workflow is very similar to the 'Centralized' workflow. The b
 
 Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
-## You Do: Merging: The Good, The Bad, and The Ugly (Feature Branch Workflow)
+## Exercise: Merging: The Good, The Bad, and The Ugly (Feature Branch Workflow)
 
 **Throughout today's exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
 
-### PRs and Merging (15 min)
+### PRs and Merging
 
 **Student 1**
 
@@ -131,7 +136,7 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 Next, try to break it!!!!
 
-## Resolving Merge Conflicts (5 min)
+## Resolving Merge Conflicts
 When you encounter a `merge conflict`,instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this:
 ```
 <<<<<<< HEAD
@@ -148,7 +153,7 @@ For example, if we decided we only needed var x, delete the other "stuff":
 `var x;`
 Now, we have only the code we need and can git commit.
 
-### You Do: Merge Conflicts (25 min)
+### Exercise: Merge Conflicts
 
 **Both Students**
 
@@ -208,7 +213,7 @@ On `Student 2's computer`, look over the merge conflicts, resolve it locally, co
 
 Pull down the changes to `git-teams-starter`
 
-### Think/Pair/Share - 5/5 (10 min)
+### Think/Pair/Share - 5/5
 
 Discuss with your partner and write down the answers to the following questions below. Afterwards, we will discuss your ideas together as a class.
 
@@ -218,13 +223,18 @@ Some things to consider:
 2. What were the necessary commands to run to incorporate those changes?
 3. What kind of system and channels best allow developers to prevent, and resolve merge conflicts most effectively?
 
-##[Pennies!](https://github.com/ga-wdi-exercises/pennies) (20 minutes)
-
-## Rebasing (Read on your own)
+## Rebasing
 
 Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
 
-[Git Merge Versus Rebase](https://gist.github.com/beckybeauchamp1/51a805c61e8b30624cc1)
+## Git Merge
+
+![Git Pull/Merge](http://code4reference.com/wp-content/uploads/2013/06/git-pull.jpg)
+
+
+## Git Rebase
+
+![Git Rebase](http://code4reference.com/wp-content/uploads/2013/06/git-pull-rebase1.jpg)
 
 [Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 
@@ -374,9 +384,9 @@ Furthermore, `Github` allows us to comment directly on `PRs`, so we can easily i
 
 Interested to read more about [code reviews?](https://github.com/ga-dc/project2-code-review/blob/master/code_review_primer.md)
 
-## Closing (5 min)
+## Closing
 
-### Quiz Questions
+### Review Questions
 - Identify the syntax needed to create a new branch. How about creating a new branch and switching to it?
 - Why should you never work on the same files on different branches?
 - Explain the difference between rebase and merge
