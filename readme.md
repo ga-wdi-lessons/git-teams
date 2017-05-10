@@ -199,7 +199,7 @@ Now, we have only the code we need and can git commit.
 
 * If there is a merge conflict, work together to resolve it!
 
-### Resolving Merge Conflicts `git pull (Merge Conflicts)
+### Resolving Merge Conflicts `git pull` (Merge Conflicts)
 
 ``` bash
 git checkout git-teams-starter
