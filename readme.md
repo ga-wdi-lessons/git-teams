@@ -19,30 +19,31 @@ Git, apart from being free and open source, is also in many ways a superior syst
 
 A branch in git is just a label on a particular commit in a repository, along with all of its history (parent commits). When we commit, the current branch label moves forward to the new commit. Another way to say that is the branch label always stays at the tip of the branch.
 
-> `HEAD` indicates the point on the repository that we're reading from. When we run `git branch <new branch>`, new branches get added at wherever `HEAD` points. If 'HEAD' is pointing at the end of a branch, it also means that new commits will be added to that branch.
+> `HEAD` indicates the last commit on the currently checked out branch. When we run `git branch <new branch>`, new branches get added at wherever `HEAD` points. It is possible (and frequently desirable) to checkout a commit that is not the latest commit on a branch. When you do this, you have a _detached HEAD_; more [here](http://stackoverflow.com/a/2529982).
 
 ![Git Branch Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/using-branches/01.svg)
 
 > From [Atlassian - Git Branching Tutorial](https://www.atlassian.com/git/tutorials/using-branches/git-branch)
 
-Q. Why is branching an important part of git?
----
+#### Why is branching an important part of git?
 
-> A. Branches are useful for many reasons, but some of the most common ones:
+Branches are useful for many reasons, but some of the most common ones:
 
-> 1. To allow experimentation. By switching to a new branch, we can experiment,
-and if the experiment fails, we can delete it and easily switch back to master
+1. To allow experimentation. By switching to a new branch, we can experiment,
+and if the experiment fails, we can easily switch back to master
 (or another branch of our choice). If it succeeds, we can merge those changes
 into master.
+
 2. To allow work to proceed on multiple features (or by multiple people) without
 interfering. When a feature is complete, it can be merged back into master.
+
 3. To allow easy bug fixes on a stable version while features are being developed.
 
 ## Exercise: Emergency Compliment Angular - Setup
 
 Form pairs. To start:
-- One student should fork and clone the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter) to their GitHub
-- Add the second student as a collaborator to this repository. You can do this by going to the `Settings` tab on the repo and selecting `Collaborators & Teams` under `Options.`
+- One student should fork the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter)
+- After forking, add the second student as a collaborator to your repo by going to the `Settings` tab then selecting `Collaborators & Teams` on the left.
 - The second student should clone the newly-forked repo, so they have a local copy and can start working
 
 ```bash
@@ -159,7 +160,7 @@ Now, we have only the code we need and can git commit.
 
 * First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
 
-* `Locally`, make sure you are checked out to our `git-teams-starter` branch
+* **Locally**, make sure you are checked out to our `git-teams-starter` branch
 
 * Then, do a `git pull origin git-teams-starter` to receive the latest changes.
 
@@ -198,7 +199,7 @@ Now, we have only the code we need and can git commit.
 
 * If there is a merge conflict, work together to resolve it!
 
-### Resolving Merge Conflicts `Git Pull (Merge Conflicts)`
+### Resolving Merge Conflicts `git pull` (Merge Conflicts)
 
 ``` bash
 git checkout git-teams-starter
@@ -212,6 +213,11 @@ On `Student 2's computer`, look over the merge conflicts, resolve it locally, co
 **Student 1**
 
 Pull down the changes to `git-teams-starter`
+
+
+#### Further Reading
+
+Checkout the [GitHub docs on resolving a merge conflict](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
 
 ### Think/Pair/Share - 5/5
 
@@ -344,15 +350,14 @@ Example Aliases:
 
 If you are adding an Alias to your bash profile you might have to reload to see your updates by running `$ source ~/.bash_profile`
 
-### Additional Scripts
+### Additional Tools
 
-`git-wtf`: Script that displays the state of your repository in a readable and easy-to-scan format
+[`git-wtf`](http://git-wt-commit.rubyforge.org/): Script that displays the state of your repository in a readable and easy-to-scan format
 
-[Open Source Scripts/Git Tools](http://git-wt-commit.rubyforge.org/)
+[`git-create`](https://www.viget.com/articles/create-a-github-repo-from-the-command-line): Bash function that creates a github repo from the command line
 
-`git-create`: Bash function that creates a github repo from the command line
 
-[Create Github Repos From Command Line](https://www.viget.com/articles/create-a-github-repo-from-the-command-line)
+[`hub`](https://github.com/github/hub): "is a command line tool that wraps git in order to extend it with extra features and commands that make working with GitHub easier." Hub is built and maintained by GitHub
 
 ## Software Development and Collaboration
 
