@@ -1,23 +1,30 @@
 # Git Teams & Workflow
 
 ## Learning Objectives
+
 - Distinguish between git workflow models to organize code changes and collaborate as a team
 - Use branches and pull requests to isolate changes tied to specific features
 - Efficiently and correctly resolve merge conflicts
 
 ## Framing: Review Basic Git Workflow
 
-Although you've all been using Git and Github for a couple months, you've largely been doing so individually. In the wild, software development rarely takes place in this kind of workflow. When you are working in the industry, you will likely be part of a development team. You will definitely be part of a development team as you complete Project 3. Clear, replicable version control practices, combined with good communication, can make collaboration easier and more efficient. In order to build up to that, we need to make sure we're building on a solid foundation of Git basics.
+Although you've all been using Git and Github for a couple months, you've largely been doing so individually. In the wild, software development rarely takes place in this kind of workflow. When you are working in the industry, you will likely be part of a development team.
+
+We'll be working in small teams for Project 3 to gain a sense of collaborative development. Clear, repeatable version control practices, combined with good communication make collaboration easier and more efficient. In order to build up to that, we need to make sure we're building on a solid foundation of Git basics.
 
 ### Why Use Version Control?
+
 When you're working on a project, you sometimes want to be able to retrace your steps, or even revert your project to a previous state.  And often (particularly in the workplace) you need a way to effectively collaborate on a single project without stepping on each others' toes. Version control tools address all of these needs.
 
 ### Why Git?
-Git, apart from being free and open source, is also in many ways a superior system to many older version control tools (such as Subversion) because it is a "distributed" version control tool. This means that there is no centralized approval structure for making changes to the project; instead, every student who clones the repository has their own complete copy, which they can then edit and change. This makes it much easier to use when working in groups.
+
+Git, apart from being free and open source, is also in many ways a superior system to many older version control tools (such as Subversion) because it is a "distributed" version control tool. Distributed simply means that there will be 'redundant' copies of repositories held by multiple people. We've been just thinking of these as **forks**.
+
+This means that there is no centralized approval structure for making changes to the project; instead, every student who clones the repository has their own **complete copy**, which they can then edit and change. This makes it much easier to use when working in groups, since each member can have an up-to-date and complete repository.
 
 ### Review Git Branching
 
-A branch in git is just a label on a particular commit in a repository, along with all of its history (parent commits). When we commit, the current branch label moves forward to the new commit. Another way to say that is the branch label always stays at the tip of the branch.
+A branch in `git` is just a label on a particular commit in a repository, along with all of its history (parent commits). When we commit, the current branch label moves forward to the new commit. Another way to say that is the branch label always stays at the tip of the branch.
 
 > `HEAD` indicates the last commit on the currently checked out branch. When we run `git branch <new branch>`, new branches get added at wherever `HEAD` points. It is possible (and frequently desirable) to checkout a commit that is not the latest commit on a branch. When you do this, you have a _detached HEAD_; more [here](http://stackoverflow.com/a/2529982).
 
@@ -29,19 +36,15 @@ A branch in git is just a label on a particular commit in a repository, along wi
 
 Branches are useful for many reasons, but some of the most common ones:
 
-1. To allow experimentation. By switching to a new branch, we can experiment,
-and if the experiment fails, we can easily switch back to master
-(or another branch of our choice). If it succeeds, we can merge those changes
-into master.
+1. To allow experimentation. By switching to a new branch, we can experiment, and if the experiment fails, we can easily switch back to master (or another branch of our choice). If it succeeds, we can merge those changes into master.
 
-2. To allow work to proceed on multiple features (or by multiple people) without
-interfering. When a feature is complete, it can be merged back into master.
+2. To allow work to proceed on multiple features (or by multiple people) without interfering. When a feature is complete, it can be merged back into master.
 
 3. To allow easy bug fixes on a stable version while features are being developed.
 
 ## Exercise: Emergency Compliment Angular - Setup
 
-Form pairs. To start:
+Form pairs. To start...
 - One student should fork the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter)
 - After forking, add the second student as a collaborator to your repo by going to the `Settings` tab then selecting `Collaborators & Teams` on the left.
 - The second student should clone the newly-forked repo, so they have a local copy and can start working
@@ -54,8 +57,9 @@ git checkout git-teams-starter
 
 ### Centralized Workflow
 
-How It Works: The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
-- [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-(and-stashing%29/)
+The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
+
+> [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-(and-stashing%29/)
 
 ![Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
 
@@ -67,7 +71,7 @@ How It Works: The remote repo has one single branch on it, master. All collabora
 
 ### Feature Branch Workflow
 
-How It Works: This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a new remote branch rather than master, and (b) submit a pull request to ask for them to be added to the remote repo's master branch.
+This workflow is very similar to the 'Centralized' workflow. The biggest difference is that there are branches (which helps to keep feature-related commits isolated), and that instead of pushing changes up directly, collaborators (a) push up changes to a remote that ***is not*** `master`, and (b) submit a pull request from the feature branch to ask for them to be added to the remote repo's master branch.
 
 ![Feature Branch Workflow](https://wac-cdn.atlassian.com/dam/jcr:80d671b1-8a4b-4378-914c-e25fe3d2dcce/07.svg?cdnVersion=dj)
 
@@ -99,7 +103,7 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 
 * Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
 
-* Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app:
+* Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app...
 
 ```js
 
@@ -114,8 +118,8 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
   }
 
 }());
-
 ```
+
 * Make sure to also add our Script tag in our `index.html`!
 
 - **Both Students**
@@ -138,39 +142,50 @@ Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
 Next, try to break it!!!!
 
 ## Resolving Merge Conflicts
-When you encounter a `merge conflict`,instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this:
-```
+
+When you encounter a `merge conflict`,instead of directly merging, Git asks the user to manually resolve the conflicts. In your project files, after trying to merge, those conflicts usually look something like this...
+
+```js
 <<<<<<< HEAD
 var x = 1,
-y = 2;
+    y = 2;
 =======
 var x;
 >>>>>>> other_branch
 ```
-The first section is the version that exists on the `current branch`; the second section is the version that exists on the branch you're trying to pull in. Figure out which version of the code makes the most sense moving forward, delete the version that doesn't and all the extra stuff that Git adds (<<<<<<<, =======, etc.) and run `git commit` to finalize the merge.
+
+The first section is the version that exists on the `current branch`; the second section is the version that exists on the branch you're trying to pull in. Figure out which version of the code makes the most sense moving forward, delete the version that doesn't and all the extra stuff that Git adds (`<<<<<<<`, `=======`, etc.) and run `git commit` to finalize the merge.
 
 For example, if we decided we only needed var x, delete the other "stuff":
 
-`var x;`
-Now, we have only the code we need and can git commit.
+```diff
+- <<<<<<< HEAD
+- var x = 1,
+-     y = 2;
+- =======
++ var x;
+- >>>>>>> other_branch
+```
+
+Now, we have only the code we need and can commit the changes we made to resolve the merge conflict.
 
 ### Exercise: Merge Conflicts
 
 **Both Students**
 
-* First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
+1. First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
 
-* **Locally**, make sure you are checked out to our `git-teams-starter` branch
+1. **Locally**, make sure you are checked out to our `git-teams-starter` branch.
 
-* Then, do a `git pull origin git-teams-starter` to receive the latest changes.
+1. Then, do a `git pull origin git-teams-starter` to receive the latest changes.
 
 **Note** If you encounter a merge conflict, work together to resolve it before continuing. Then push up the changes!
 
-* Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment.
+1. Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment.
 
-* Then, add the code in our `index.html` outlined below. We will be creating a div with the directive `ng-controller`.
+1. Then, add the code in our `index.html` outlined below. We will be creating a `<div>` with the directive `ng-controller`.
 
-* Work to display the `text` of a random compliment in `data.js` by writing the code within the below div:
+1. Work to display the `text` of a random compliment in `data.js` by writing the code within the below div...
 
 ```js
 <div data-ng-controller='complimentsController as vm'>
@@ -231,12 +246,11 @@ Some things to consider:
 
 ## Rebasing
 
-Rebasing allows us to rearrange and effectively rewrite our `git commit` history! Rather than combining the finished data from two different branches via a single commit, it combines the two branches themselves, rearranging them and, effectively, re-writing history.
+Rebasing allows us to rearrange and effectively rewrite our commit history! Rather than combining the most recent commits from two different branches via a single commit, it combines the two branches themselves, rearranging their commits while ***re-writing*** the repo's commit history. For that reason, it can be dangerous.
 
 ## Git Merge
 
 ![Git Pull/Merge](http://code4reference.com/wp-content/uploads/2013/06/git-pull.jpg)
-
 
 ## Git Rebase
 
@@ -262,12 +276,12 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 - Create a `styles.css` file and add CSS to our emergency compliment page
 - Link to your stylesheet from the `<head>` of `index.html`.
 - Each add unique CSS styling of your choosing.
-- Feel free to modify the index.html as well.
+- Feel free to modify the `index.html` as well.
 - Both students should add and commit changes.
 
 **Added Bonus**
 
-For a bonus, `Both students` should work on functionality to display `all` of the compliments instead of one.
+For a bonus, **both students** should work on functionality to display **all** of the compliments instead of one.
 
 [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
 
@@ -301,20 +315,21 @@ $ git fetch <remote> <branch>
 $ git diff <remote>/<branch>
 ```
 
-One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to try that commit again, you can run `git commit --amend` with the `--amend` option:
+One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to try that commit again, you can run `git commit --amend` with the `--amend` option...
 
 ```sh
 $ git commit --amend
 ```
+
 ### Deleting Branches: Locally VS Remote
 
-Locally:
+Locally...
 
 `git branch -d <branch>` Deletes local branch
 
 `git branch -D <branch>` Forces delete for un-merged branches
 
-Remote:
+Remote...
 
 `git push origin :<branch>` Deletes Remote Branch
 
@@ -340,7 +355,8 @@ Aliases allow us to configure shortcuts and can help speed up our workflow!
 
 We can configure them in our `.gitconfig` or `.bash_profile`
 
-Example Aliases:
+Example Aliases...
+
 ```
 [alias]
   g = git
