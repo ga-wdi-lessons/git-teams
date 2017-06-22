@@ -59,7 +59,7 @@ git checkout git-teams-starter
 
 The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
 
-> [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-(and-stashing%29/)
+> [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-%28and-stashing%29/)
 
 ![Centralized Workflow Diagram](https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg)
 
