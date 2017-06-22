@@ -1,5 +1,7 @@
 # Git Teams & Workflow
 
+![Voltron Team](https://i.ytimg.com/vi/tZZv5Z2Iz_s/hqdefault.jpg)
+
 ## Learning Objectives
 
 - Distinguish between git workflow models to organize code changes and collaborate as a team
@@ -57,7 +59,7 @@ git checkout git-teams-starter
 
 ### Centralized Workflow
 
-The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their master branch isn't out of date.
+The remote repo has one single branch on it, master. All collaborators have separate clones of this repo. They can each work independently on separate things. However, before they push, they need to run git fetch/git pull to make sure that their **local** copy of the `master` branch isn't out of sync with the **remote** `master` branch.
 
 > [git fetch vs git pull](https://codeahoy.com/2016/04/18/10-git-pull-vs-git-fetch-%28and-stashing%29/)
 
