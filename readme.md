@@ -252,11 +252,11 @@ Rebasing allows us to rearrange and effectively rewrite our commit history! Rath
 
 ## Git Merge
 
-![Git Pull/Merge](http://code4reference.com/wp-content/uploads/2013/06/git-pull.jpg)
+![Git Pull/Merge](https://git.generalassemb.ly/storage/user/6376/files/aee6a68e-81b6-11e7-9fb7-31c12053681f)
 
 ## Git Rebase
 
-![Git Rebase](http://code4reference.com/wp-content/uploads/2013/06/git-pull-rebase1.jpg)
+![Git Rebase](https://git.generalassemb.ly/storage/user/6376/files/c6f3d54e-81b6-11e7-9f1b-c5a81d1e0207)
 
 [Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 
