@@ -44,17 +44,6 @@ Branches are useful for many reasons, but some of the most common ones:
 
 3. To allow easy bug fixes on a stable version while features are being developed.
 
-## Exercise: Emergency Compliment Angular - Setup
-
-Form pairs. To start...
-- One student should fork the [starter-code](https://github.com/ga-wdi-exercises/emergency_compliment/tree/git-teams-starter)
-- After forking, add the second student as a collaborator to your repo by going to the `Settings` tab then selecting `Collaborators & Teams` on the left.
-- The second student should clone the newly-forked repo, so they have a local copy and can start working
-
-```bash
-git checkout git-teams-starter
-```
-
 ## Single-Remote Workflows
 
 ### Centralized Workflow
@@ -83,63 +72,32 @@ This workflow is very similar to the 'Centralized' workflow. The biggest differe
 
 **(-)** Sometimes it's too flexible - it doesn't distinguish in any meaningful way between different branches, and that lack of structure can be problematic for larger projects.
 
-Feature Branch Example: [Garnet](https://github.com/ga-dc/garnet)
-
 ## Exercise: Merging: The Good, The Bad, and The Ugly (Feature Branch Workflow)
 
-**Throughout today's exercises, we will use the `git-teams-starter` branch where we would usually use `master`.**
+#### Emergency Compliment React - Setup
 
-### PRs and Merging
+Form pairs. To start...
+- Student 1 should create a new repo named `emergency_compliment`. Don't select the `Initialize this repository with a README` option on GitHub.
+- Student 1 should add the second student as a collaborator to your repo by going to the `Settings` tab then selecting `Collaborators & Teams` on the left.
 
-**Student 1**
+**Both Students**
 
-* Check out a new feature branch and create a `js/app.js` file.
+1. `git clone <url>`
+2. `cd emergency_compliment`
+3. `create-react-app .`
+4. `atom .`
+5. `npm run start`
 
-* Then, work with your partner to write code for our first module in `js/app.js` to instantiate our `compliments` Angular App.
 
-* Don't forget to add a Script Tag for `js/app.js` in our `index.html`!
+* Check out a new feature branch and create a Hello component. It should take the users' name, and return `Hello {name}`. Keep it simple!
 
-  [See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/5fbb7c0e0a3dd71bc39bf188d2c30ec4f7447aeb?diff=unified)
-
-**Student 2**
-
-* Check out a new feature branch and add a `js/compliments` directory route and create a `js/compliments/compliments.controller.js` file in our directory.
-
-* Inside of our `compliments.controller.js` add in the following code to instantiate our controller for our main app...
-
-```js
-
-`use strict`;
-
-(function(){
-  var app = angular.module("compliments");
-  app.controller("complimentsController", ComplimentsController);
-
-  function ComplimentsController(){
-    var vm = this;
-  }
-
-}());
-```
-
-* Make sure to also add our Script tag in our `index.html`!
-
-- **Both Students**
-
-* Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes from your feature branch into `git-teams-starter`.
+* Commit your changes and push them to the remote repo using this command `git push origin <branch name>`. Open a pull request on Github to merge the changes from your feature branch into `master`.
 
 * Each student should add a comment to the PR! It should be an inline comment asking a question about the code, a suggestion or just adding an observation!
 
 * If there are no conflicts, merge your pull request and delete your feature branches!
 
-* If there are merge conflicts, WAIT to merge the conflicts until the next `You-Do`.  You will need to  `git pull` the latest changes, resolve the conflict, then `commit` again.
-
-**Reminders**:
-
-1. If you already have an `emergency_compliment` repo, you can clone it down and give it a different name using: `git clone <repo url> <name for repo>`
-2. Make sure you are starting your branches from an `git-teams-starter`
-3. If you need to get more branches, or had forked previously, you are going to want to set the `ga-dc` version of `emergency-compliment` as your `upstream` remote.
-4. Be mindful of the commands you are running, e.g. careful not to run `git checkout -b` when you are trying to switch between branches, this will create new branches.
+* If there are merge conflicts, WAIT to merge the conflicts until the next `Exercise`.  You will need to `git pull` the latest changes, resolve the conflict, then `commit` again.
 
 Next, try to break it!!!!
 
@@ -175,61 +133,47 @@ Now, we have only the code we need and can commit the changes we made to resolve
 
 **Both Students**
 
-1. First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
+* First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
 
-1. **Locally**, make sure you are checked out to our `git-teams-starter` branch.
+* **Locally**, make sure you are checked out to our `master` branch.
 
-1. Then, do a `git pull origin git-teams-starter` to receive the latest changes.
+* Then, do a `git pull origin master` to receive the latest changes.
 
-**Note** If you encounter a merge conflict, work together to resolve it before continuing. Then push up the changes!
+* **Note** If you encounter a merge conflict, work together to resolve it before continuing. Then push up the changes!
 
-1. Check out a new feature branch and add code to our to `complimentsController` so we can use `ng-controller` in our views to see a a random compliment.
+* Check out a new feature branch, and create a new `Compliment` component. It should return a random compliment from the list below:
 
-1. Then, add the code in our `index.html` outlined below. We will be creating a `<div>` with the directive `ng-controller`.
-
-1. Work to display the `text` of a random compliment in `data.js` by writing the code within the below div...
-
-```js
-<div data-ng-controller='complimentsController as vm'>
-</div>
 ```
-
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/3b70377262d59351cd7b89cc8fa9880ebf051fd7)
+var data  = ["Good effort!", "What a fine sweater!", "I appreciate all of your opinions.", "I like your style.", "Your T-shirt smells fresh.", "I love what you've done with the place.", "You are like a spring flower; beautiful and vivacious.", "I am utterly disarmed by your wit.", "I really enjoy the way you pronounce the word 'ruby'.", "You complete me.", "Well done!", "I like your Facebook status.", "That looks nice on you.", "I like those shoes more than mine.", "Nice motor control!", "You have a good taste in websites.", "Your mouse told me that you have very soft hands.", "You are full of youth.", "I like your jacket.", "I like the way you move.", "You have a good web-surfing stance.", "You should be a poster child for poster children.", "Nice manners!", "I appreciate you more than Santa appreciates chimney grease.", "I wish I was your mirror.", "I find you to be a fountain of inspiration.", "You have perfect bone structure.", "I disagree with anyone who disagrees with you.", "Way to go!", "Have you been working out?", "With your creative wit, I'm sure you could come up with better compliments than me.", "I like your socks.", "You are so charming.", "Your cooking reminds me of my mother's.", "You're tremendous!", "You deserve a compliment!", "Hello, good looking."];
+```
 
 **Student 1**
 
-* Change our Angular App name from `compliments` to `emergencyComp` and ALL instances of it referenced in our application!
+* Rename the component `Compliment` into `Compliments`.
 
 **Student 2**
 
-* Change our Angular App name from `compliments` to `angularComp` and ALL instances of it referenced in our application!
-
-* Change the name of our `complimentsController` in `js/compliments/compliment.controller.js` AND `index.html` to  `mainController`
+* Rename `var data` into `const compliments`
 
 **Student 1**
 
-* Commit your changes and push them to the remote repo. Open a pull request on Github to merge the changes on your feature branch into `git-teams-starter`.
+* Commit your changes and push them to the remote repo. Open a pull request on Github, and merge the changes on your feature branch into `master`.
 
 **Student 2**
 
-* Commit your changes, and still on your `feature` branch, pull the `git-teams-starter`changes from GitHub.
+* Commit your changes, and still on your `feature` branch, pull the `master` changes from GitHub by using `git pull origin master`.
 
-* If there is a merge conflict, work together to resolve it!
-
-### Resolving Merge Conflicts `git pull` (Merge Conflicts)
-
-``` bash
-git checkout git-teams-starter
-git pull origin git-teams-starter
-git push <remote> <your-branchname>
-```
 **Both Students**
 
 On `Student 2's computer`, look over the merge conflicts, resolve it locally, commit, and push.
 
+**Student 2**
+
+Push your feature branch to GitHub using `git push origin <branch>`. Then create a PR, and merge your branch into master.
+
 **Student 1**
 
-Pull down the changes to `git-teams-starter`
+Pull down the changes to `master`
 
 
 #### Further Reading
@@ -275,17 +219,14 @@ Like git merge, git rebase also sometimes runs into merge conflicts that need to
 **Both Students**
 
 - Check out a new feature branch.
-- Create a `styles.css` file and add CSS to our emergency compliment page
-- Link to your stylesheet from the `<head>` of `index.html`.
+- Create a `Compliment.css` file and add CSS to our emergency compliment page
+- Import your stylesheet into `Compliment.js`.
 - Each add unique CSS styling of your choosing.
-- Feel free to modify the `index.html` as well.
 - Both students should add and commit changes.
 
 **Added Bonus**
 
 For a bonus, **both students** should work on functionality to display **all** of the compliments instead of one.
-
-[See Solution](https://github.com/ga-wdi-exercises/emergency_compliment/commit/203a2187bfe4e54761c07127458362af5836d7ad)
 
 **Student 1**
 push branch and make a pr, and merge your changes.
