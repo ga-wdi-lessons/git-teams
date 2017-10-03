@@ -74,20 +74,31 @@ This workflow is very similar to the 'Centralized' workflow. The biggest differe
 
 ## Exercise: Merging: The Good, The Bad, and The Ugly (Feature Branch Workflow)
 
-#### Emergency Compliment React - Setup
+Form pairs. Decide who will be Student 1, and who will be Student 2!
 
-Form pairs. To start...
-- Student 1 should create a new repo named `emergency_compliment`. Don't select the `Initialize this repository with a README` option on GitHub.
-- Student 1 should add the second student as a collaborator to your repo by going to the `Settings` tab then selecting `Collaborators & Teams` on the left.
+**Student 1**
 
-**Both Students**
+- Create a new repo named `emergency_compliment`. Don't select the `Initialize this repository with a README` option on GitHub.
+- Add the second student as a collaborator to your repo by going to the `Settings` tab then selecting `Collaborators & Teams` on the left.
 
 1. `git clone <url>`
 2. `cd emergency_compliment`
 3. `create-react-app .`
-4. `atom .`
-5. `npm run start`
+4. `git add .`
+5. `git commit -m "initial commit"`
+6. `git push origin master`
+7. `atom .`
 
+**Student 2**
+
+After Student 1 is done pushing his code:
+
+1. `git clone <url>`
+2. `cd emergency_compliment`
+3. `npm install`
+7. `atom .`
+
+**Each Student**
 
 * Check out a new feature branch and create a Hello component. It should take the users' name, and return `Hello {name}`. Keep it simple!
 
@@ -133,7 +144,7 @@ Now, we have only the code we need and can commit the changes we made to resolve
 
 **Both Students**
 
-* First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches.
+* First, make sure all remote `PRs` and branches have been merged together. Once your changes are successfully merged, delete your feature branches from GitHub and your local machines.
 
 * **Locally**, make sure you are checked out to our `master` branch.
 
